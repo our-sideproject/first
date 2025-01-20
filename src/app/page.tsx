@@ -1,3 +1,1 @@
-export default function Page() {
-  return <>Hello World</>;
-}
+export { Splash as default } from '@/containers/Splash/Page';

@@ -1,3 +1,4 @@
+import { AuthProvider } from '@/contexts/AuthProvider';
 import type { Metadata } from 'next';
 import { CSSProperties, Suspense } from 'react';
 
@@ -14,9 +15,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body style={BodyStyle}>
-        <Suspense>
-          <div style={ContainerStyle}>{children}</div>
-        </Suspense>
+        <AuthProvider>
+          <Suspense>
+            <div style={ContainerStyle}>{children}</div>
+          </Suspense>
+        </AuthProvider>
       </body>
     </html>
   );
