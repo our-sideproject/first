@@ -1,10 +1,16 @@
-import { Meta, StoryObj } from '@storybook/react';
-import { BottomSheet, BottomSheetRootProps } from './BottomSheet';
-import { Drawer } from 'vaul';
+import { Meta } from '@storybook/react';
+import {
+  BottomSheet,
+  BottomSheetBody,
+  BottomSheetContent,
+  BottomSheetFooter,
+  BottomSheetRootProps,
+  BottomSheetTrigger,
+} from './BottomSheet';
 
 const meta: Meta<BottomSheetRootProps> = {
   title: 'components/BottomSheet',
-  component: BottomSheet.Root,
+  component: BottomSheet,
 };
 export default meta;
 
@@ -19,34 +25,34 @@ proident Lorem eiusmod et. Culpa deserunt nostrud ad veniam.
 
 export const Default = () => {
   return (
-    <BottomSheet.Root>
-      <BottomSheet.Trigger>
+    <BottomSheet>
+      <BottomSheetTrigger>
         <button className="bg-gray-100 px-[12px] py-[8px] rounded-10">누르면 바텀시트가 열려요</button>
-      </BottomSheet.Trigger>
-      <BottomSheet.Content>
-        <BottomSheet.Body style={{ paddingBottom: 100 }}>{CONTENT}</BottomSheet.Body>
-        <BottomSheet.Footer>
+      </BottomSheetTrigger>
+      <BottomSheetContent>
+        <BottomSheetBody style={{ paddingBottom: 100 }}>{CONTENT}</BottomSheetBody>
+        <BottomSheetFooter>
           <button>버튼1</button>
           <button>버튼2</button>
-        </BottomSheet.Footer>
-      </BottomSheet.Content>
-    </BottomSheet.Root>
+        </BottomSheetFooter>
+      </BottomSheetContent>
+    </BottomSheet>
   );
 };
 
 export const Scrollable = () => {
   return (
-    <BottomSheet.Root>
-      <BottomSheet.Trigger>
+    <BottomSheet>
+      <BottomSheetTrigger>
         <button className="bg-gray-100 px-[12px] py-[8px] rounded-10">누르면 Scrollable 바텀시트가 열려요</button>
-      </BottomSheet.Trigger>
-      <BottomSheet.Content>
-        <BottomSheet.Body style={{ paddingBottom: 100 }}>{CONTENT.repeat(10)}</BottomSheet.Body>
-        <BottomSheet.Footer>
+      </BottomSheetTrigger>
+      <BottomSheetContent>
+        <BottomSheetBody style={{ paddingBottom: 100 }}>{CONTENT.repeat(10)}</BottomSheetBody>
+        <BottomSheetFooter>
           <button>버튼1</button>
           <button>버튼2</button>
-        </BottomSheet.Footer>
-      </BottomSheet.Content>
-    </BottomSheet.Root>
+        </BottomSheetFooter>
+      </BottomSheetContent>
+    </BottomSheet>
   );
 };
