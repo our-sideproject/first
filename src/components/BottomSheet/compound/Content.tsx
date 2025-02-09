@@ -3,7 +3,6 @@ import { ContentProps, Drawer } from 'vaul';
 import { BottomSheetHandleBar } from './HandleBar';
 import { BottomSheetCloseIconButton } from './CloseIconButton';
 import { ReactNode } from 'react';
-import { useBottomSheetContext } from '../context';
 
 export interface BottomSheetContentProps extends ContentProps {
   handleBar?: boolean;
@@ -17,7 +16,6 @@ export function BottomSheetContent({
   children,
   ...props
 }: BottomSheetContentProps) {
-  const { setOpen } = useBottomSheetContext();
   const isDefualtCloseButton = handleClose === true;
 
   return (
@@ -31,8 +29,8 @@ export function BottomSheetContent({
         {...props}>
         {handleBar && <BottomSheetHandleBar />}
         {handleClose && (
-          <span className="absolute top-[24px] right-[24px] cursor-pointer" onClick={() => setOpen(false)}>
-            {isDefualtCloseButton ? <BottomSheetCloseIconButton /> : handleClose}
+          <span className="absolute top-[24px] right-[24px] cursor-pointer">
+            <Drawer.Close>{isDefualtCloseButton ? <BottomSheetCloseIconButton /> : handleClose}</Drawer.Close>
           </span>
         )}
         {children}

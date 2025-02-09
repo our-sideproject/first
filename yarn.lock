@@ -1492,15 +1492,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.14.8, @babel/runtime@npm:^7.19.0, @babel/runtime@npm:^7.21.0":
-  version: 7.26.7
-  resolution: "@babel/runtime@npm:7.26.7"
-  dependencies:
-    regenerator-runtime: ^0.14.0
-  checksum: a1664a08f3f4854b895b540cca2f5f5c6c1993b5fb788c9615d70fc201e16bb254df8e0550c83eaf2749a14d87775e11a7c9ded6161203e9da7a4a323d546925
-  languageName: node
-  linkType: hard
-
 "@babel/template@npm:^7.24.7, @babel/template@npm:^7.25.0":
   version: 7.25.0
   resolution: "@babel/template@npm:7.25.0"
@@ -2467,7 +2458,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@radix-ui/react-use-controllable-state@npm:1.1.0, @radix-ui/react-use-controllable-state@npm:^1.1.0":
+"@radix-ui/react-use-controllable-state@npm:1.1.0":
   version: 1.1.0
   resolution: "@radix-ui/react-use-controllable-state@npm:1.1.0"
   dependencies:
@@ -3228,49 +3219,6 @@ __metadata:
   peerDependencies:
     "@testing-library/dom": ">=7.21.4"
   checksum: d76937dffcf0082fbf3bb89eb2b81a31bf5448048dd61c33928c5f10e33a58e035321d39145cefd469bb5a499c68a5b4086b22f1a44e3e7c7e817dc5f6782867
-  languageName: node
-  linkType: hard
-
-"@toss/react@npm:^1.8.1":
-  version: 1.8.1
-  resolution: "@toss/react@npm:1.8.1"
-  dependencies:
-    "@babel/runtime": ^7.14.8
-    "@toss/storage": ^1.4.1
-    "@toss/utils": ^1.6.1
-    classnames: ^2.3.1
-    lodash.debounce: ^4.0.8
-    lodash.throttle: ^4.1.1
-  peerDependencies:
-    react: ^16.0.0 || ^17.0.0 || ^18
-  checksum: 5de3e20383c1310f9d0155ada95a1654a437457ff4d40ee22d60e45b65094df963f354dd19cfd574b1f059d3cfd498feee96266af9dbe6f2a4041c50a43ce7d7
-  languageName: node
-  linkType: hard
-
-"@toss/storage@npm:^1.4.1":
-  version: 1.4.1
-  resolution: "@toss/storage@npm:1.4.1"
-  dependencies:
-    "@babel/runtime": ^7.19.0
-  checksum: 2cd10ed3062dff34d5bda434f8407cd05f7ecf506ec17edd55f84f97964dc7225af15f8aa4bf2db6ced2cd4cb5ebccd1e2eadd298f1316bf26d4472eb5e795ca
-  languageName: node
-  linkType: hard
-
-"@toss/utility-types@npm:^1.2.1":
-  version: 1.2.1
-  resolution: "@toss/utility-types@npm:1.2.1"
-  checksum: cc40a9251a2275fbd9ec73bb2230dce1e0992f29fb06e932123ee02a4a7f4349e78c3d0eafa11a3d43dcb00258f7c48043bfc7980f3dbd24df19c0dc71bfa11c
-  languageName: node
-  linkType: hard
-
-"@toss/utils@npm:^1.6.1":
-  version: 1.6.1
-  resolution: "@toss/utils@npm:1.6.1"
-  dependencies:
-    "@babel/runtime": ^7.14.8
-    "@toss/utility-types": ^1.2.1
-    date-fns: ^2.25.0
-  checksum: fa0144f1a7cc3fc854e5686cb2ae8815f56a1874142fc836c45a8eb83d92593784044e3dbb9e504bab051055da5d6a57d4df7a7fcbb3eff6da93a2c7b252b02c
   languageName: node
   linkType: hard
 
@@ -4623,7 +4571,6 @@ __metadata:
   resolution: "bbo-gak@workspace:."
   dependencies:
     "@chromatic-com/storybook": ^1.6.1
-    "@radix-ui/react-use-controllable-state": ^1.1.0
     "@storybook/addon-essentials": ^8.2.1
     "@storybook/addon-interactions": ^8.2.1
     "@storybook/addon-links": ^8.2.1
@@ -4635,7 +4582,6 @@ __metadata:
     "@tailwindcss/typography": ^0.5.13
     "@tanstack/react-query": ^5.51.1
     "@tanstack/react-query-devtools": ^5.51.1
-    "@toss/react": ^1.8.1
     "@types/node": ^20
     "@types/react": ^18
     "@types/react-dom": ^18
@@ -5139,13 +5085,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"classnames@npm:^2.3.1":
-  version: 2.5.1
-  resolution: "classnames@npm:2.5.1"
-  checksum: da424a8a6f3a96a2e87d01a432ba19315503294ac7e025f9fece656db6b6a0f7b5003bb1fbb51cbb0d9624d964f1b9bb35a51c73af9b2434c7b292c42231c1e5
-  languageName: node
-  linkType: hard
-
 "clean-css@npm:^5.2.2":
   version: 5.3.3
   resolution: "clean-css@npm:5.3.3"
@@ -5646,15 +5585,6 @@ __metadata:
     es-errors: ^1.3.0
     is-data-view: ^1.0.1
   checksum: 7f0bf8720b7414ca719eedf1846aeec392f2054d7af707c5dc9a753cc77eb8625f067fa901e0b5127e831f9da9056138d894b9c2be79c27a21f6db5824f009c2
-  languageName: node
-  linkType: hard
-
-"date-fns@npm:^2.25.0":
-  version: 2.30.0
-  resolution: "date-fns@npm:2.30.0"
-  dependencies:
-    "@babel/runtime": ^7.21.0
-  checksum: f7be01523282e9bb06c0cd2693d34f245247a29098527d4420628966a2d9aad154bd0e90a6b1cf66d37adcb769cd108cf8a7bd49d76db0fb119af5cdd13644f4
   languageName: node
   linkType: hard
 
@@ -8729,13 +8659,6 @@ __metadata:
   version: 4.6.2
   resolution: "lodash.merge@npm:4.6.2"
   checksum: ad580b4bdbb7ca1f7abf7e1bce63a9a0b98e370cf40194b03380a46b4ed799c9573029599caebc1b14e3f24b111aef72b96674a56cfa105e0f5ac70546cdc005
-  languageName: node
-  linkType: hard
-
-"lodash.throttle@npm:^4.1.1":
-  version: 4.1.1
-  resolution: "lodash.throttle@npm:4.1.1"
-  checksum: 129c0a28cee48b348aef146f638ef8a8b197944d4e9ec26c1890c19d9bf5a5690fe11b655c77a4551268819b32d27f4206343e30c78961f60b561b8608c8c805
   languageName: node
   linkType: hard
 

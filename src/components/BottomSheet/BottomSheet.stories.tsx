@@ -5,6 +5,7 @@ import {
   BottomSheetContent,
   BottomSheetFooter,
   BottomSheetRootProps,
+  BottomSheetTitle,
   BottomSheetTrigger,
 } from './BottomSheet';
 import { BottomSheetContentProps } from './compound/Content';
@@ -54,7 +55,10 @@ export const Default: StoryObj<BottomSheetContentProps> = {
         <button className="bg-gray-100 px-[12px] py-[8px] rounded-10">누르면 바텀시트가 열려요</button>
       </BottomSheetTrigger>
       <BottomSheetContent {...args}>
-        <BottomSheetBody style={{ paddingBottom: 100 }}>{CONTENT}</BottomSheetBody>
+        <BottomSheetBody style={{ paddingBottom: 100 }}>
+          <BottomSheetTitle>이건 타이틀이에요</BottomSheetTitle>
+          {CONTENT}
+        </BottomSheetBody>
         <BottomSheetFooter>
           <button>버튼1</button>
           <button>버튼2</button>
@@ -71,7 +75,10 @@ export const Scrollable = () => {
         <button className="bg-gray-100 px-[12px] py-[8px] rounded-10">누르면 Scrollable 바텀시트가 열려요</button>
       </BottomSheetTrigger>
       <BottomSheetContent>
-        <BottomSheetBody style={{ paddingBottom: 100 }}>{CONTENT.repeat(10)}</BottomSheetBody>
+        <BottomSheetBody style={{ paddingBottom: 100 }}>
+          <BottomSheetTitle>이건 타이틀이에요</BottomSheetTitle>
+          {CONTENT.repeat(10)}
+        </BottomSheetBody>
         <BottomSheetFooter>
           <button>버튼1</button>
           <button>버튼2</button>
