@@ -10,7 +10,7 @@ import { BottomSheetTrigger, BottomSheetTriggerProps } from './compound/Trigger'
 type BottomSheetRootProps = RootProps;
 function BottomSheet({
   /**
-   * open 상태가 되었을 때, Overlay에 `aria-hidden="true"`가 되지만 focus가 남아있어 에러가 발생합니다.
+   * open 상태가 되었을 때, Content 외 나머지 DOM을 hidden 처리합니다. (https://github.com/radix-ui/primitives/blob/main/packages/react/dialog/src/dialog.tsx#L262-L266)
    * open 상태가 되었을 때 자동으로 focus를 받을 수 있도록 autoFocus를 기본적으로 true로 설정합니다.
    * https://github.com/emilkowalski/vaul/issues/517#issuecomment-2571619213
    */
