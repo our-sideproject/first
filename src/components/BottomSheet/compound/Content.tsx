@@ -16,7 +16,7 @@ export function BottomSheetContent({
   children,
   ...props
 }: BottomSheetContentProps) {
-  const isDefualtCloseButton = handleClose === true;
+  const isUsingDefualtCloseButton = handleClose === true;
 
   return (
     <Drawer.Portal>
@@ -30,7 +30,7 @@ export function BottomSheetContent({
         {handleBar && <BottomSheetHandleBar />}
         {handleClose && (
           <span className="absolute top-[24px] right-[24px] cursor-pointer">
-            <Drawer.Close>{isDefualtCloseButton ? <BottomSheetCloseIconButton /> : handleClose}</Drawer.Close>
+            <Drawer.Close>{isUsingDefualtCloseButton ? <BottomSheetCloseIconButton /> : handleClose}</Drawer.Close>
           </span>
         )}
         {children}
