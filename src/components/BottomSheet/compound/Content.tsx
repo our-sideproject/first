@@ -1,8 +1,25 @@
 import clsx from 'clsx';
 import { ContentProps, Drawer } from 'vaul';
+import { BottomSheetHandleBar } from './HandleBar';
+import { BottomSheetCloseIconButton } from './CloseIconButton';
+import { ReactNode } from 'react';
+import { useBottomSheetContext } from '../context';
 
-export type BottomSheetContentProps = ContentProps;
-export function BottomSheetContent({ className, children, ...props }: BottomSheetContentProps) {
+export interface BottomSheetContentProps extends ContentProps {
+  handleBar?: boolean;
+  handleClose?: boolean | ReactNode;
+}
+
+export function BottomSheetContent({
+  className,
+  handleBar = true,
+  handleClose = false,
+  children,
+  ...props
+}: BottomSheetContentProps) {
+  const { setOpen } = useBottomSheetContext();
+  const isDefualtCloseButton = handleClose === true;
+
   return (
     <Drawer.Portal>
       <Drawer.Overlay className="fixed inset-0 bg-black/40" />
@@ -12,10 +29,12 @@ export function BottomSheetContent({ className, children, ...props }: BottomShee
           className,
         )}
         {...props}>
-        <div
-          aria-hidden
-          className="absolute w-[49px] h-[4px] rounded-[8px] bg-gray-300 top-[10px] left-1/2 transform -translate-x-1/2"
-        />
+        {handleBar && <BottomSheetHandleBar />}
+        {handleClose && (
+          <span className="absolute top-[24px] right-[24px] cursor-pointer" onClick={() => setOpen(false)}>
+            {isDefualtCloseButton ? <BottomSheetCloseIconButton /> : handleClose}
+          </span>
+        )}
         {children}
       </Drawer.Content>
     </Drawer.Portal>
