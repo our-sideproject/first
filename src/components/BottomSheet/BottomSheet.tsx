@@ -8,8 +8,9 @@ import { BottomSheetTitle, BottomSheetTitleProps } from './compound/Title';
 import { BottomSheetTrigger, BottomSheetTriggerProps } from './compound/Trigger';
 
 type BottomSheetRootProps = RootProps;
-
-const BottomSheet = Drawer.Root;
+function BottomSheet({ autoFocus = true, ...props }: BottomSheetRootProps) {
+  return <Drawer.Root autoFocus={autoFocus} {...props} />;
+}
 const BottomSheetClose = Drawer.Close;
 
 export {
