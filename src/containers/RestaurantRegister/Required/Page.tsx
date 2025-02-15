@@ -1,15 +1,22 @@
 'use client';
 
 import type { CSSProperties } from 'react';
-import { useState } from 'react';
-import { Spacing } from '../../components/Spacing';
+import { useEffect, useState } from 'react';
+import { Spacing } from '../../../components/Spacing';
 import { DropdownContainer } from './components/DropdownContainer';
-import { DUMMY_LIST } from '../dummy';
+import { DUMMY_LIST } from '../../dummy';
 import { DropdownItem } from './components/DropdownItem';
+import { StatusSection } from './sections/StatusSection';
+import { PriceSection } from '@/containers/RestaurantRegister/Required/sections/PriceSection';
+import { CTA } from './components/CTA';
+import { useRouter } from 'next/navigation';
 
-export function RestaurantRegister() {
+export function RequiredPage() {
+  const router = useRouter();
   const [focused, setFocused] = useState(false);
   const [name, setName] = useState<string>();
+  const [selectedPrice, setSelectedPrice] = useState<string>();
+  const [selectedStatuses, setSelectedStatuses] = useState<string[]>([]);
 
   return (
     <>
@@ -18,7 +25,7 @@ export function RestaurantRegister() {
           <Spacing size={12} />
           <div style={TitleStyle}>{`??역 직장인\n닉네임님의 추천 맛집은..`}</div>
           <Spacing size={8} />
-          <div style={SubtitleStyle}>인증된 역 Nm이내의 식당만 추천할 수 있어요</div>
+          <div style={SubtitleStyle}>회사 주변 Nm이내의 식당만 추천할 수 있어요</div>
         </>
       )}
       <Spacing size={76} />
@@ -45,6 +52,24 @@ export function RestaurantRegister() {
           </DropdownContainer>
         ) : null}
       </div>
+      {name != null && name !== '' ? (
+        <>
+          <Spacing size={48} />
+          <StatusSection
+            selectedStatuses={selectedStatuses}
+            onStatusClick={(status) => {
+              if (selectedStatuses.includes(status)) {
+                setSelectedStatuses((statuses) => statuses.filter((s) => status !== s));
+              } else {
+                setSelectedStatuses((statuses) => [...statuses, status]);
+              }
+            }}
+          />
+          <Spacing size={48} />
+          <PriceSection selectedPrice={selectedPrice} onPriceClick={setSelectedPrice} />
+          <CTA onCTAClick={() => router.push('/restaurant-register/optional')} />
+        </>
+      ) : null}
     </>
   );
 }
@@ -76,6 +101,6 @@ const TextFieldStyle: CSSProperties = {
   backgroundColor: '#F2F3F6',
   border: 'none',
   margin: '0 20px',
-  width: 'calc(100% - 80px)',
+  width: 'calc(100% - 40px)',
   outline: 'none',
 };

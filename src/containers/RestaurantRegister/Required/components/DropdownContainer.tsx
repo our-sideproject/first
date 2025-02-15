@@ -20,4 +20,5 @@ const ContainerStyle: CSSProperties = {
   border: '1px solid #DCDEE2',
   padding: '12px 20px',
   margin: '8px 20px 0 20px',
+  backgroundColor: 'white',
 };
